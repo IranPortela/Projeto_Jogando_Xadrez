@@ -2,12 +2,14 @@ package application;
 
 import chess.ChessPiece;
 
+// User Interface for printing ChessBoard.
+
 public class UI {
 	public static void printBoard(ChessPiece[][] pieces) {
-		for (int c = 0; c < pieces.length; c++) {
-			System.out.print((8 - c) + " ");
-			for (int l = 0; l < pieces.length; l++) {
-				printPiece(pieces[c][l]);
+		for (int row = 0; row < pieces.length; row++) {
+			System.out.print((8 - row) + " ");
+			for (int column = 0; column < pieces[row].length; column++) {
+				printPiece(pieces[row][column]);
 				System.out.print(" ");
 			}
 			System.out.println();
@@ -20,7 +22,7 @@ public class UI {
 			System.out.print("-");
 		}
 		else {
-			System.out.println(piece);
+			System.out.print(piece);
 		}
 		
 	}
